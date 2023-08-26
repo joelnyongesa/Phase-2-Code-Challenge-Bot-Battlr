@@ -1,12 +1,14 @@
+import { Link, Outlet } from "react-router-dom";
+
 const LandingPage = () => {
     return ( 
         <div>
             <nav>
-                <button>Home</button>
-                <button>Bot Collection</button>
-                <button>Your Bot Army</button>
+                <button><Link to='/home'>Home</Link></button>
+                <button><Link to='/bot-collection'>Bot Collection</Link></button>
+                <button><Link to='/your-bot-army'>Your Bot Army</Link></button>
             </nav>
-            <h1>Welcome to <strong>Bot Battlr</strong>, the one and only spot in the known universe where you can custom build your own Bot Army!</h1>
+            <Outlet></Outlet>
         </div>
      );
 }
