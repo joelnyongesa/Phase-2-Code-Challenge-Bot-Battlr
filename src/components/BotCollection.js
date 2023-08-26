@@ -59,7 +59,6 @@ const BotCollection = ({onAddBot}) => {
         setBots(bots.filter((bot)=>bot.id !== botId ))
     }
 
-
     return ( 
         <>
             <h2 className="text-xl font-bold mt-5 mb-5">List of all the available Bots</h2>

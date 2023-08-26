@@ -1,4 +1,5 @@
 const YourBotArmy = ({yourBots, onDeleteBot}) => {
+
     /*
         Add an individual bot to my army by clicking on it. The selected bot should render in this component, and the bot can only be enlisted ONCE. The bot does not disappear from the BotsCollection.
 
@@ -36,8 +37,6 @@ const YourBotArmy = ({yourBots, onDeleteBot}) => {
             </div>
         )
     })
-
-   
 
     return ( 
         <>
