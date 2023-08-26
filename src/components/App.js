@@ -27,6 +27,12 @@ function App() {
   }
 
   // console.log(myBots)
+  
+  // To handle deleting/releasing a bot from the collection of bots, NON PERSISTENT..
+  function handleBotRelease(bot){
+    setMyBots(myBots.filter((myBot)=>bot.id !== myBot.id))
+  }
+  
 
 
   return (
@@ -36,7 +42,7 @@ function App() {
           <Route path='/'element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/bot-collection' element={<BotCollection onAddBot={handleAddBot}/>}/>
-          <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots}/>}/>
+          <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots} onDeleteBot={handleBotRelease}/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>

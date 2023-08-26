@@ -1,4 +1,4 @@
-const YourBotArmy = ({yourBots}) => {
+const YourBotArmy = ({yourBots, onDeleteBot}) => {
     /*
         Add an individual bot to my army by clicking on it. The selected bot should render in this component, and the bot can only be enlisted ONCE. The bot does not disappear from the BotsCollection.
 
@@ -9,7 +9,7 @@ const YourBotArmy = ({yourBots}) => {
     //Loop over the bots to return the bots in YourBotArmy.
     const yourBotsList = yourBots.map((yourBot)=>{
         return(
-            <div key={yourBot.id}>
+            <div key={yourBot.id} onClick={()=>onDeleteBot(yourBot)}>
                 <img src={yourBot.avatar_url} alt={yourBot.name}/>
                 <h3>{yourBot.name}</h3>
                 <p>Class: {yourBot.bot_class}</p>
@@ -22,6 +22,8 @@ const YourBotArmy = ({yourBots}) => {
             </div>
         )
     })
+
+   
 
     return ( 
         <div>
