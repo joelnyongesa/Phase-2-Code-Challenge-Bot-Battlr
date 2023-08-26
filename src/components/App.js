@@ -1,9 +1,10 @@
 import './App.css';
+import LandingPage from './LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to <strong>Bot Battlr</strong>, the one and only spot in the known universe where you can custom build your own Bot Army!</h1>
+      <LandingPage />
     </div>
   );
 }
