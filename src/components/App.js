@@ -32,6 +32,18 @@ function App() {
   function handleBotRelease(bot){
     setMyBots(myBots.filter((myBot)=>bot.id !== myBot.id))
   }
+
+  // Persistently deleting the bots from the collection to the database.
+  function handlePersistentDelete(botId){
+    fetch(`http://localhost:8001/bots/${botId}`, {
+        method: 'DELETE'
+    })
+    .then(r=>r.json())
+    .then(data => console.log(data))
+    .catch(e=>console.log(e))
+}
+
+  
   
 
 
