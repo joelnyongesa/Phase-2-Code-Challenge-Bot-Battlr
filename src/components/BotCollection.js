@@ -17,18 +17,29 @@ const BotCollection = ({onAddBot}) => {
     // Looping through the bots to display them.
     const botsList = bots.map((bot)=>{
         return(
-            <div key={bot.id}>
-                <img src={bot.avatar_url} alt={bot.name}/>
-                <h3>{bot.name}</h3>
-                <p>Class: {bot.bot_class}</p>
+            <div key={bot.id} className="max-w-sm rounded overflow-hidden shadow-lg p-5 m-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <img src={bot.avatar_url} alt={bot.name} className="w-ful"/>
+                <h3 className="font-bold text-xl mb-2">{bot.name}</h3>
+                <p className="text-gray-700 text-base">Class: {bot.bot_class}</p>
                 <p>Catch phrase: {bot.catchphrase}</p>
                 <p>Created at: {bot.created_at}</p>
                 <p>Updated at: {bot.updated_at}</p>
-                Health: <progress value={bot.health} max='100'/>
-                Damage: <progress value={bot.damage} max='100'/>
-                Armor: <progress value={bot.armor} max='100'/>
-                <button onClick={()=>{onAddBot(bot)}}>Add Bot to Collection</button>
-                <button onClick={() => { handlePersistentDelete(bot.id); updateBotsList(); }}>Delete Bot</button>
+                <div className="flex flex-col justify-center items-center">
+                    <div className="w-full bg-gray-200 rounded-full dark:bg-gray-200 m-2">
+                    <div className="bg-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{ width: `${bot.health}%` }}>Health</div>
+                    </div>
+
+                    <div className="w-full bg-gray-200 rounded-full dark:bg-gray-200 m-2">
+                    <div className="bg-red-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{ width: `${bot.damage}%` }}>Damage</div>
+                    </div>
+
+                    <div className="w-full bg-gray-200 rounded-full dark:bg-gray-200 m-2">
+                    <div className="bg-green-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style={{ width: `${bot.armor}%` }}>Armor</div>
+                    </div>
+                </div>
+                
+                <button className="text-white font-semibold bg-blue-500 rounded px-2 py-2 m-2 hover:bg-blue-700" onClick={()=>{onAddBot(bot)}}>Add Bot to Collection</button>
+                <button className="text-white font-semibold bg-blue-500 rounded px-2 py-2 m-2 hover:bg-blue-700" onClick={() => { handlePersistentDelete(bot.id); updateBotsList(); }}>Delete Bot</button>
             </div>
         )
     })
@@ -50,10 +61,13 @@ const BotCollection = ({onAddBot}) => {
 
 
     return ( 
-        <div>
-            <h1>List of all the Available Bots.</h1>
+        <>
+            <h2 className="text-xl font-bold mt-5 mb-5">List of all the available Bots</h2>
+            <div className="flex flex-wrap justify-center">
             {botsList}
-        </div>
+            </div>
+        </>
+        
      );
 }
  
