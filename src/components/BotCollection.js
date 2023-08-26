@@ -27,10 +27,25 @@ const BotCollection = ({onAddBot}) => {
                 Health: <progress value={bot.health} max='100'/>
                 Damage: <progress value={bot.damage} max='100'/>
                 Armor: <progress value={bot.armor} max='100'/>
+                <button onClick={() => { handlePersistentDelete(bot.id); updateBotsList(); }}>Delete Bot</button>
             </div>
         )
     })
 
+    // Persistently deleting the bots from the collection to the database.
+    function handlePersistentDelete(botId){
+        fetch(`http://localhost:8001/bots/${botId}`, {
+            method: 'DELETE'
+        })
+        .then(r=>r.json())
+        .then(data => console.log(data))
+        .catch(e=>console.log(e))
+    }
+
+    // function to update the state of the bots.
+    function updateBotsList(botId){
+        setBots(bots.filter((bot)=>bot.id !== botId ))
+    }
 
     return ( 
         <div>

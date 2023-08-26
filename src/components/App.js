@@ -32,6 +32,19 @@ function App() {
   function handleBotRelease(bot){
     setMyBots(myBots.filter((myBot)=>bot.id !== myBot.id))
   }
+
+
+  // Persistently deleting the bots from the collection to the database.
+  function handlePersistentDelete(botId){
+    fetch(`http://localhost:8001/bots/${botId}`, {
+        method: 'DELETE'
+    })
+    .then(r=>r.json())
+    .then(data => console.log(data))
+    .catch(e=>console.log(e))
+}
+
+
   
 
 
@@ -42,10 +55,7 @@ function App() {
           <Route path='/'element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/bot-collection' element={<BotCollection onAddBot={handleAddBot}/>}/>
-
           <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots} onDeleteBot={handleBotRelease}/>}/>
-
-          <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots}/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
