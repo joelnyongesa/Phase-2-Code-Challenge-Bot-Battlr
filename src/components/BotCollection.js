@@ -17,7 +17,7 @@ const BotCollection = ({onAddBot}) => {
     // Looping through the bots to display them.
     const botsList = bots.map((bot)=>{
         return(
-            <div key={bot.id}>
+            <div key={bot.id} onClick={()=>{onAddBot(bot)}}>
                 <img src={bot.avatar_url} alt={bot.name}/>
                 <h3>{bot.name}</h3>
                 <p>Class: {bot.bot_class}</p>
@@ -27,7 +27,6 @@ const BotCollection = ({onAddBot}) => {
                 Health: <progress value={bot.health} max='100'/>
                 Damage: <progress value={bot.damage} max='100'/>
                 Armor: <progress value={bot.armor} max='100'/>
-                <button onClick={()=>{onAddBot(bot)}}>Add Bot to Collection</button>
                 <button onClick={() => { handlePersistentDelete(bot.id); updateBotsList(); }}>Delete Bot</button>
             </div>
         )
@@ -47,7 +46,6 @@ const BotCollection = ({onAddBot}) => {
     function updateBotsList(botId){
         setBots(bots.filter((bot)=>bot.id !== botId ))
     }
-
 
     return ( 
         <div>
