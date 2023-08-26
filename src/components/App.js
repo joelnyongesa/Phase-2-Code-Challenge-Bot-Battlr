@@ -42,7 +42,10 @@ function App() {
           <Route path='/'element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
           <Route path='/bot-collection' element={<BotCollection onAddBot={handleAddBot}/>}/>
+
           <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots} onDeleteBot={handleBotRelease}/>}/>
+
+          <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots}/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
