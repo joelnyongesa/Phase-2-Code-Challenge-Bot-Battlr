@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Phase 2 Week 2 Code Challenge- Bot Battlr
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+Welcome to **Bot Battlr**, the ultimate destination in the known universe for creating your very own Bot Army! This repository contains the source code for our app.
 
-In the project directory, you can run:
+## Requirements and Specifications
 
-### `npm start`
+* Nodejs v20.3.1
+* npm v9.8.1
+* React v18.2.0
+* react-dom v18.2.0
+* react-router-dom v6.15.0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup Instructions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. To set up this project, fork and clone this repository using this command: `git clone git@github.com:joelnyongesa/Phase-2-Code-Challenge-Bot-Battlr.git`
+2. Navigate to the cloned directory in your terminal and open it using your preferred code editor. For this project, Visual Studio Code was used.
+3. Open one terminal window on your code editor and type in `npm install` to install all the dependencies this project has used. After you are done, type in the command `npm start` to get your server up and running on `localhost:3000`
+4. Open another separate terminal window inside the code editor and type in `npm run server` to fire up our json server on `localhost/8001`
 
-### `npm test`
+## Technologies used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React.
+* JSX.
+* Tailwind CSS.
+* JSON
 
-### `npm run build`
+## How to use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open the web page in the browser using the link provided after running `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As a user, you can:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* View the homepage.
+* See a list of all available bots in the database displayed as cards. Each card includes the bot's name, creation time, update time, and statistics such as health, damage, and armor.
+* Add a specific bot to *Your Bots Collection* to make up your own army! To do this, simply click on the `Add Bot to Collection` button displayed on every card.
+* Delete a bot permanently from our database by pressing the `Delete Bot` button available on each bot card.
+* See your bots collection. To do this, simply click on the `Your Bot Army` button at the top right section of the screen. This will take you to a page showing you all the available bots you added to your army.
+* Release the bots from your collection by simply tapping the `Release Bot` button displayed on each bot.
 
-### `npm run eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Made with ♡ by Joel Nyongesa.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contacts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Feel free to mail or contact me via [this email](mailto:joelnyongesa148@gmail.com)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Licence
 
-## Learn More
+[![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright (c) 2023 **Joel Nyongesa**
