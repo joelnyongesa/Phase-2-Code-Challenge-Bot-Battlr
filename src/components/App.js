@@ -36,7 +36,7 @@ function App() {
 
   // Persistently deleting the bots from the collection to the database.
   function handlePersistentDelete(botId){
-    fetch(`http://localhost:8001/bots/${botId}`, {
+    fetch(`https://bot-battlr-api-a7ji.onrender.com/bots/${botId}`, {
         method: 'DELETE'
     })
     .then(r=>r.json())

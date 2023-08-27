@@ -7,7 +7,7 @@ const BotCollection = ({onAddBot}) => {
 
     // Fetching the data
     useEffect(()=>{
-        fetch('http://localhost:8001/bots')
+        fetch('https://bot-battlr-api-a7ji.onrender.com/bots')
         .then(r=>r.json())
         .then(data=>setBots(data))
         .then(e=>console.log(e))
@@ -46,7 +46,7 @@ const BotCollection = ({onAddBot}) => {
 
     // Persistently deleting the bots from the collection to the database.
     function handlePersistentDelete(botId){
-        fetch(`http://localhost:8001/bots/${botId}`, {
+        fetch(`https://bot-battlr-api-a7ji.onrender.com/bots/${botId}`, {
             method: 'DELETE'
         })
         .then(r=>r.json())
