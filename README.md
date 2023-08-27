@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Welcome to **Bot Battlr**, the ultimate destination in the known universe for creating your very own Bot Army! This repository contains the source code for our app.
+Welcome to **Bot Battlr**, the ultimate destination in the known universe for creating your very own Bot Army! This repository contains the source code for our app. The app is live [here](https://main--animated-pegasus-9600b5.netlify.app/)
 
 ## Requirements and Specifications
 
