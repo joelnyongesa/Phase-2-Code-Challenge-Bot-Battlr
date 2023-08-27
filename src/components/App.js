@@ -1,6 +1,6 @@
 import './App.css';
 import LandingPage from './LandingPage';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import Home from './Home';
 import BotCollection from './BotCollection';
 import YourBotArmy from './YourBotArmy';
