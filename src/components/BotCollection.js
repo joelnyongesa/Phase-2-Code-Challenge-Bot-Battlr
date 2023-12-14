@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const BotCollection = ({onAddBot}) => {
+const BotCollection = ({onAddBot, onPersistentDelete}) => {
     // Display the profiles of all the bots
     // Name, health, damage, armor, bot class, catchphrase, avatar_url, created_at, updated_at
     const [bots, setBots] = useState([])
@@ -39,7 +39,17 @@ const BotCollection = ({onAddBot}) => {
                 </div>
                 
                 <button className="text-white font-semibold bg-blue-500 rounded px-2 py-2 m-2 hover:bg-blue-700" onClick={()=>{onAddBot(bot)}}>Add Bot to Collection</button>
-                <button className="text-white font-semibold bg-blue-500 rounded px-2 py-2 m-2 hover:bg-blue-700" onClick={() => { handlePersistentDelete(bot.id); updateBotsList(); }}>Delete Bot</button>
+                <button
+                    className="text-white font-semibold bg-blue-500 rounded px-2 py-2 m-2 hover:bg-blue-700"
+                    onClick={() => {
+                        handlePersistentDelete(bot.id);
+                        updateBotsList(bot.id);
+                        onPersistentDelete(bot.id);
+                    }}
+                    >
+                    Delete Bot
+                </button>
+
             </div>
         )
     })

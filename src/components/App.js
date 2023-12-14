@@ -8,10 +8,22 @@ import NotFound from './NotFound';
 import { useState } from 'react';
 
 function App() {
+  // state variable to store the ID of the deleted bot
+  const [deletedBotId, setDeletedBotId]= useState()
+
   // State variables for my bots that have been clicked on.
 
   const [myBots, setMyBots] = useState([])
   // Handling adding of the bot.
+
+  function updateDeletedId(id){
+    setDeletedBotId(id)
+  }
+
+  function handlePersistentDelete(id){
+    setDeletedBotId(id)
+    setMyBots(myBots.filter((myBot)=>myBot.id !== deletedBotId))
+  }
 
   function handleAddBot(bot){
     // Bot can only be enlisted ONCE. Check if the bot is already in the myBots list
@@ -41,8 +53,8 @@ function App() {
         <Route element={<LandingPage/>}>
           <Route path='/'element={<Home/>}/>
           <Route path='/home' element={<Home/>}/>
-          <Route path='/bot-collection' element={<BotCollection onAddBot={handleAddBot}/>}/>
-          <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots} onDeleteBot={handleBotRelease}/>}/>
+          <Route path='/bot-collection' element={<BotCollection onAddBot={handleAddBot} onPersistentDelete={updateDeletedId}/>}/>
+          <Route path='/your-bot-army' element={<YourBotArmy yourBots={myBots} onDeleteBot={handleBotRelease} persistentDelete={handlePersistentDelete}/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
